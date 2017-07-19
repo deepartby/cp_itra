@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Paint </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+</head>
+<body>
+<div class="container form-login col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3">
+    <div>
+        <h3>Hello <span th:text="${username}"/>! Go to paint!</h3>
+    </div>
+    <div>
+        <a href="/"> <button class="btn btn-primary col-md-offset-3"> Home </button> </a>
+    </div>
+    </div>
+</div>
+</body>
+</html>
