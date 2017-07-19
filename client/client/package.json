@@ -22,7 +22,12 @@
         "@angular/platform-browser": "^4.0.0",
         "@angular/platform-browser-dynamic": "^4.0.0",
         "@angular/router": "^4.0.0",
+        "@angular2-material/button": "^2.0.0-alpha.8-3",
+        "@angular2-material/card": "^2.0.0-alpha.8-3",
+        "@angular2-material/core": "^2.0.0-alpha.8-3",
+        "@angular2-material/icon": "^2.0.0-alpha.8-3",
         "core-js": "^2.4.1",
+        "materialize-css": "^0.99.0",
         "rxjs": "^5.2.0",
         "systemjs": "^0.19.47",
         "zone.js": "^0.8.5"
