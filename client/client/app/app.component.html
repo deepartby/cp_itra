@@ -17,10 +17,22 @@
                     </div>
                 </form>
             </li>
-            <li><a href="collapsible.html" [routerLink]="['/login']" >Login</a></li>
+            <li><a href="collapsible.html" [routerLink]="['/login']" >{{ 'LOGIN' | translate }}</a></li>
         </ul>
     </div>
 </nav>
+<!--
+
+<div>
+    <h2>{{ 'HOME' | translate }}</h2>
+    <label>
+        {{ 'HOME' | translate }}
+        <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+    </label>
+</div>
+-->
 
 <!-- main app container -->
 <div class="jumbotron">
