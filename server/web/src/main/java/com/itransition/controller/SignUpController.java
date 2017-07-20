@@ -27,6 +27,7 @@ public class SignUpController {
     private CustomEmailSender sender;
 
     private final static String PREFIX = "localhost:8080/sign-up/enable?key=";
+    private final static String PREFIX_CLI = "localhost:3000/login";
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<UserDTO> signup(@RequestBody UserDTO dto) {
@@ -69,19 +70,18 @@ public class SignUpController {
     }
 
     @RequestMapping(value = "/enable", params = {"key"}, method = RequestMethod.GET)
-    public ModelAndView enableAccount(@RequestParam(value = "key") String key) {
+    public ResponseEntity<String> enableAccount(@RequestParam(value = "key") String key) {
         ModelAndView model = new ModelAndView();
         Optional<User> optional = userService.findUserByKey(key);
         if(optional.isPresent()) {
-            model.setViewName("redirect:/logout");
             User user = optional.get();
             user.setEnableKey(null);
             user.setIsActivated(true);
             userService.save(user);
+            return new ResponseEntity<>( PREFIX_CLI,HttpStatus.OK);
         } else {
-            model.setViewName("redirect:/used-link");
+          return new ResponseEntity<>("/error",HttpStatus.OK);
         }
-        return model;
     }
 
     private String generateActivationKey(Long id) {
